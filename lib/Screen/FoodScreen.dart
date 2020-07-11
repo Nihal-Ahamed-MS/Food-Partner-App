@@ -62,7 +62,7 @@ class _FoodScreenState extends State<FoodScreen> {
          return AlertDialog(
            title: Text('Add Food Items', style: TextStyle(fontSize: 15.0)),
            content: Container(
-             height: 200.0,
+             height: 150.0,
              child: Column(
                mainAxisAlignment: MainAxisAlignment.center,
                children: <Widget>[
@@ -79,8 +79,6 @@ class _FoodScreenState extends State<FoodScreen> {
                      this.price = value;
                    },
                  ),
-                 SizedBox(height: 5.0,),
-                 
                ],
              ),
            ),
@@ -115,7 +113,7 @@ class _FoodScreenState extends State<FoodScreen> {
          return AlertDialog(
            title: Text('Update', style: TextStyle(fontSize: 15.0)),
            content: Container(
-             height: 300.0,
+             height: 150.0,
              child: Column(
                mainAxisAlignment: MainAxisAlignment.center,
                children: <Widget>[
@@ -165,7 +163,7 @@ class _FoodScreenState extends State<FoodScreen> {
            Icons.add,
            color: Colors.white
          ),
-         backgroundColor: Colors.blue,
+         backgroundColor: Colors.blueAccent
        ),
        body: menuList()
     );
@@ -207,13 +205,3 @@ class _FoodScreenState extends State<FoodScreen> {
 
 } 
 
-
-
-/*Switch(
-                   value: onOff,
-                   onChanged: (bool newValue) {
-                    setState(() {
-                    onOff = newValue;
-                     });
-                    },
-                 ),*/

@@ -73,16 +73,20 @@ class _HomePageState extends State<HomePage> {
            Icons.add,
            color: Colors.white
          ),
-         backgroundColor: Colors.blue,
+         backgroundColor: Colors.blueAccent,
        ),
-       body:Container(
-         padding: EdgeInsets.all(5.0),
-         child: Card(
-           child: ListTile(
-             title: Text(hotelName),
-             subtitle: Text(hotelType),
+       body:Column(
+         children: <Widget>[
+           Container(
+             padding: EdgeInsets.all(5.0),
+             child: Card(
+               child: ListTile(
+                 title: Text(hotelName),
+                 subtitle: Text(hotelType),
+               ),
+             ),
            ),
-         ),
+         ],
        )
     );
   }

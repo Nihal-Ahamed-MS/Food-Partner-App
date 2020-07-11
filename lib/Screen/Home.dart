@@ -50,8 +50,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
    @override
    Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueAccent,
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         title: Text('Partner App'),
+        centerTitle: true,
         actions: <Widget>[
            IconButton(
             icon: Icon(Icons.exit_to_app),
@@ -60,7 +63,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             },   
           )
          ],
-        backgroundColor: Colors.blue,
         bottom: TabBar(
           controller: tabController,
           tabs: <Widget>[
@@ -79,3 +81,60 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     );
   }
 } 
+
+
+
+
+
+    /*Scaffold(
+      backgroundColor: Colors.blueAccent,
+      
+       body: Stack(
+         children: <Widget>[
+           Positioned(
+              child: AppBar(
+              backgroundColor: Colors.transparent,
+              centerTitle: true,
+              title: Text("Delivery Partner", style: TextStyle(fontSize: 20.0, fontFamily: 'Montserrat')),
+              actions: <Widget>[
+                IconButton(
+                  icon: Icon(Icons.exit_to_app),
+                  onPressed: (){
+                    signOut();
+                  },   
+                )
+              ],
+               bottom: TabBar(
+                controller: tabController,
+                tabs: <Widget>[
+                  Tab(icon: Icon(Icons.home),),
+                  Tab(icon: Icon(Icons.fastfood))
+                ],
+              ),
+            ),
+           ),
+           
+            SizedBox(height: 50),
+              Positioned(
+                top: 80.0,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white
+                  ),
+                  height: MediaQuery.of(context).size.height - 50.0,
+                  width: MediaQuery.of(context).size.width,
+                )
+              ),
+            Positioned(
+             top: 120.0,
+             child: TabBarView(
+                controller: tabController,
+                children: <Widget>[
+                  first.HomePage(),
+                  second.FoodScreen()
+                ],
+              ),
+           ),
+         ],
+       )
+    );*/

@@ -49,61 +49,86 @@ class _AddScreenState extends State<AddScreen> {
      @override
    Widget build(BuildContext context) {
     return Scaffold(
-       appBar: AppBar(
-         backgroundColor: Colors.blue,
-         title: Text('Basic Info Add'),
-       ),
-       body: Container(
-         child: Padding(
-           padding: EdgeInsets.all(20.0),
-           child: ListView(
-             children: <Widget>[
-               Container(
-                 margin: EdgeInsets.only(top: 20.0),
-                 child: GestureDetector(
-                   onTap: (){
-                     this.pickImage();
-                   },
-                   child: Center(
-                     child: Container(
-                       width: 100.0,
-                       height: 100.0,
-                       
-                      child: photo == null ? Container(
-                        decoration: BoxDecoration(
-                         shape: BoxShape.circle,
-                         image: DecorationImage(
-                           image: AssetImage('assests/images/mascot.png'),
-                           fit: BoxFit.cover
-                         )
-                       )
-                      ) : Image.file(photo)
-                     )
-                   ),
-                 ),
-               ),
-               
-               buildContainer('Name'),
-               buildContainer('Type'),
-               buildContainer('Address'),
-               buildContainer('Phone'),
-
-              
-               Container(
-                 margin: EdgeInsets.only(top: 20.0),
-                 child: RaisedButton(
-                   onPressed: (){
-                    storeValues();
-                    Navigator.of(context).pop();
-                   },
-                   child: Text("Save",style: TextStyle(color: Colors.white),),
-                   color: Colors.blue,
-                 )
-               )
-             ],
+      backgroundColor: Colors.blueAccent,
+      
+       body: Stack(
+         children: <Widget>[
+           Positioned(
+              child: AppBar(
+              backgroundColor: Colors.transparent,
+              centerTitle: true,
+              title: Text("Basic Info", style: TextStyle(fontSize: 20.0, fontFamily: 'Montserrat')),
+              leading: IconButton(icon: Icon(Icons.arrow_back_ios), onPressed: (){Navigator.of(context).pop();}),
+            ),
            ),
-         ),
-       ),
+           
+            SizedBox(height: 50),
+              Positioned(
+                top: 80.0,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white
+                  ),
+                  height: MediaQuery.of(context).size.height - 50.0,
+                  width: MediaQuery.of(context).size.width,
+                )
+              ),
+              Container(
+                height: 100.0,
+              ),
+              Container(
+                child: Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: ListView(
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.only(top: 20.0),
+                        child: GestureDetector(
+                          onTap: (){
+                            this.pickImage();
+                          },
+                          child: Center(
+                            child: Container(
+                              width: 100.0,
+                              height: 100.0,
+                              
+                              child: photo == null ? Container(
+                                decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                  image: AssetImage('assests/images/mascot.png'),
+                                  fit: BoxFit.cover
+                                )
+                              )
+                              ) : Image.file(photo)
+                            )
+                          ),
+                        ),
+                      ),
+                      
+                      buildContainer('Name'),
+                      buildContainer('Type'),
+                      buildContainer('Address'),
+                      buildContainer('Phone'),
+
+                      
+                      Container(
+                        margin: EdgeInsets.only(top: 20.0),
+                        child: RaisedButton(
+                          onPressed: (){
+                            storeValues();
+                            Navigator.of(context).pop();
+                          },
+                          child: Text("Save",style: TextStyle(color: Colors.white),),
+                          color: Colors.blue,
+                        )
+                      )
+                    ],
+                  ),
+                ),
+              ),
+         ],
+       )
     );
   }
 
@@ -161,3 +186,5 @@ class _AddScreenState extends State<AddScreen> {
 
   
 } 
+
+
